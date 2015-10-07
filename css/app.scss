@@ -1,0 +1,31 @@
+.selection__title {
+  text-align: center;
+  padding: 1rem;
+}
+
+.selection__area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selector {
+  display: flex;
+  min-width: 250px;
+  max-width: 50%;
+  min-height: 200px;
+  border: 1px solid black;
+  margin: 1rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #D8EEF9;
+  }
+
+  &:active {
+    background-color: #39ACE6;
+  }
+}
