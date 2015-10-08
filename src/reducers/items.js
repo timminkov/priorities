@@ -4,6 +4,12 @@ export default function itemData(state = { matchups: [], items: [] }, action) {
   switch (action.type) {
   case LOAD_ITEMS:
     var matchups = [];
+    var score = 1;
+
+    action.items.forEach(function(item) {
+      item.priority = score;
+      score += 1;
+    });
 
     action.items.forEach(function(item, index) {
       for(var i = index + 1; i < action.items.length; i++) {
