@@ -10,7 +10,7 @@ var app = express();
 var isDevelopment = (process.env.NODE_ENV !== 'production');
 var static_path = path.join(__dirname, 'public');
 
-const DB_URL = isDevelopment ? 'postgres://john@localhost/priorities' : process.env.DATABASE_URL;
+var DB_URL = isDevelopment ? 'postgres://john@localhost/priorities' : process.env.DATABASE_URL;
 
 var sequelize = new Sequelize(DB_URL);
 
