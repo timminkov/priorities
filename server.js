@@ -44,6 +44,14 @@ app.use(express.static(static_path))
 
 app.use('/public', express.static('public'));
 
+app.get('/priorities', function(req, res) {
+  Priority.findAll().then(function(priorities) {
+    res.json({
+      priorities: priorities
+    });
+  });
+});
+
 app.post('/submit_priorities', function(req, res) {
   res.json({ success: true });
   console.log(req.body);

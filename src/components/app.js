@@ -4,49 +4,7 @@ import { loadItems, selectItem, submitPrioritiesIfDone } from '../actions/items'
 import Selector from './selector';
 import Priorities from './priorities';
 
-const data = [
-  {
-    description: 'nginx',
-    priority: 1,
-    done: false
-  },
-  {
-    description: 'flaky tests',
-    priority: 2,
-    done: false
-  }
-  //{
-    //description: 'deploys',
-    //priority: 3,
-    //done: false
-  //},
-  //{
-    //description: 'campaign model',
-    //priority: 4,
-    //done: false
-  //},
-  //{
-    //description: 'design model',
-    //priority: 5,
-    //done: false
-  //},
-  //{
-    //description: 'https dev environment',
-    //priority: 6,
-    //done: false
-  //},
-  //{
-    //description: 'on-call guide',
-    //priority: 7,
-    //done: false
-  //}
-];
-
 var App = React.createClass({
-  componentDidMount: function() {
-    this.props.dispatch(loadItems(data));
-  },
-
   componentWillReceiveProps(nextProps) {
     const { dispatch, items, matchups } = nextProps;
 
@@ -70,10 +28,10 @@ var App = React.createClass({
       );
     }
 
+    //<Priorities items={items} />
     return (
       <div>
         {selector}
-        <Priorities items={items} />
       </div>
     );
   },
