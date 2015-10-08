@@ -10,7 +10,9 @@ export function selectItem(matchup, item) {
 
 function submitPriorities(items) {
   return dispatch => {
-    return fetch('http://localhost:8080/submit_priorities', {
+    var isDevelopment = (process.env.NODE_ENV !== 'production');
+    var rootURL = isDevelopment ? 'http://localhost:8080' : ''
+    return fetch(rootURL + '/submit_priorities', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
